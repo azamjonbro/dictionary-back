@@ -15,8 +15,24 @@ const userSchema = new mongoose.Schema({
   unlockedItems: [{ type: mongoose.Schema.Types.ObjectId, ref: 'StoreItem' }],
   settings: {
     theme: { type: String, default: 'light' },
+    themeBg: { type: String, default: '#ffffff' },
+    themeText: { type: String, default: '#1f2937' },
+    accentColor: { type: String, default: '#6366f1' },
+    avatar: { type: String, default: '' },
+    avatarFrame: { type: String, default: '' },
     avatarBg: { type: String, default: '#6366f1' },
     fontSize: { type: String, default: 'medium' }
+  },
+  badges: [{ type: String }],
+  isVerified: { type: Boolean, default: false },
+  achievements: [{
+    name: { type: String },
+    dateEarned: { type: Date, default: Date.now }
+  }],
+  activityStats: {
+    quizzesTaken: { type: Number, default: 0 },
+    perfectScores: { type: Number, default: 0 },
+    currentStreak: { type: Number, default: 0 }
   }
 }, { timestamps: true });
 

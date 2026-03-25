@@ -9,6 +9,8 @@ import quizRoutes from './routes/quizRoutes.js';
 import dictionaryRoutes from './routes/dictionaryRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
+import profileRoutes from './routes/profileRoutes.js';
+import marketplaceRoutes from './routes/marketplaceRoutes.js';
 
 dotenv.config();
 
@@ -28,6 +30,8 @@ app.use('/quiz', quizRoutes);
 app.use('/dictionary', dictionaryRoutes);
 app.use('/user', userRoutes);
 app.use('/admin', adminRoutes);
+app.use('/profile', profileRoutes);
+app.use('/marketplace', marketplaceRoutes);
 
 const createDefaultAdmin = async () => {
   try {
